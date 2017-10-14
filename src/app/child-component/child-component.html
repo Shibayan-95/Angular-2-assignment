@@ -1,0 +1,23 @@
+<div class="container">
+<div class="col-md-12">
+    <div class="card" *ngIf="item_data !== undefined">
+    <h1>{{item_data.title}}</h1>
+    <span class="glyphicon glyphicon-triangle-top go-back" (click)="goBack()"></span>
+    <div class="own_container">
+    </div>
+    <p>{{item_data.description}}</p>
+</div>
+<div class="card" *ngIf="item_data === undefined">
+    <h1>Data not retrived Properly</h1>
+</div>
+</div>
+<div class="own_container" *ngIf="flag">
+    <button type="button" class="btn btn-secondary left-arrow" (click)= "leftArrow()" [disabled]="leftarrowDisable">
+        <span class="glyphicon glyphicon-chevron-left" ></span>
+    </button>
+    <button type="button" class="btn btn-secondary right-arrow" (click)= "rightArrow()" [disabled]="rightarrowDisable">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+</div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Pane Dashboard</h1>
+  <div class="col-md-12" *ngIf="paneHeadings.length !== 0">
+    <div *ngFor="let item of paneHeadings">
+      <div class="card" routerLink="{{item.title}}" (click)="setData(item)"> 
+        <h1 class="heading">{{item.title}}</h1>
+      </div>
+    </div>
+    <!-- <div class="own_container" *ngIf="flag">
+    <button type="button" class="btn btn-secondary left-arrow" (click)= "leftArrow()" [disabled]="leftarrowDisable">
+    	<span class="glyphicon glyphicon-chevron-left" ></span>
+    </button>
+    <button type="button" class="btn btn-secondary right-arrow" (click)= "rightArrow()" [disabled]="rightarrowDisable">
+    	<span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+    <div class="glyphicon glyphicon-triangle-top go-back" (click)="goBack()"></div>
+    </div>  -->
+  </div>
+</div>
+<router-outlet></router-outlet>
